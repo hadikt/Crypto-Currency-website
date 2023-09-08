@@ -1,0 +1,31 @@
+// .header{
+//   height: 40%;
+//   display: flex;
+//   text-align: center;
+// }
+.banner{
+  background-image: url('../../../assets/moon2.jpeg');
+  height: 400px;
+  width: 100%;
+}
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+:host ::ng-deep tr.mat-header-row {
+  background-color: #009688;
+}
+// :host ::ng-deep .mat-sort-header-content {
+//   color: #fff;
+// }
+// :host ::ng-deep .mat-paginator-outer-container {
+//   background-color: rgb(36, 37, 37);
+// }

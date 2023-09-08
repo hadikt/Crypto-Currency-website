@@ -1,0 +1,32 @@
+<div class="container mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class=" p-4 rounded shadow-md">
+      <div class="img">
+        <img [src]="coinData?.image?.large" alt="">
+        <h3 class="text-center text-xl font-semibold">{{coinData.name}}</h3>
+        <h2 class="text-lg" [innerHtml]="coinData?.description?.en.split('. ')[0]"></h2>
+        <div class="mt-4">
+          <div class="mb-2">
+            <span class="font-semibold">Rank:</span> <span>{{coinData?.market_cap_rank}}</span>
+          </div>
+          <div class="mb-2">
+            <span class="font-semibold">Current Price:</span> <span>{{coinData?.market_data.market_cap.inr | currency: currency}}</span>
+          </div>
+          <div>
+            <span class="font-semibold">Market Cap:</span> <span>{{coinData?.market_data.market_cap.inr | currency: currency}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-1">
+      <canvas class="w-full" baseChart [data]="lineChartData" [options]="lineChartOptions" [type]="lineChartType"></canvas>
+      <div class="flex justify-around">
+        <button (click)="getGraph(1)" class="btn-custom">24 hours</button>
+        <button (click)="getGraph(30)" class="btn-custom">30 days</button>
+        <button (click)="getGraph(90)" class="btn-custom">90 days</button>
+        <button (click)="getGraph(365)" class="btn-custom">1 year</button>
+
+      </div>
+    </div>
+  </div>
+</div>
